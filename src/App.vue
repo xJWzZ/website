@@ -7,27 +7,33 @@
       >
         <v-toolbar-title>Jack Wall</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-btn text>About</v-btn>
-        <v-btn text>Education</v-btn>
-        <v-btn text>Awards & Achievements</v-btn>
-        <v-btn text>Skills & Projects</v-btn>
+        <div v-for='link in links' :key='link.text' class='ma-1'>
+          <v-btn text router :to='link.route'>
+            <v-icon class="mr-1">mdi-{{link.icon}}</v-icon>
+            {{link.text}}
+          </v-btn>
+        </div>
       </v-app-bar>
-      <Home/>
-      <v-footer app>
-        <a><v-img src="@/assets/footer_icons/github-logo.svg" :aspect-ratio="16/9"></v-img></a>
-      </v-footer>
+      <v-content>
+        <router-view/>
+      </v-content>
     </v-app>
   </div>
 </template>
 
 <script>
 
-import Home from '@/views/Home.vue'
-
 export default {
-  name: 'home',
-  components: {
-    Home
+  data () {
+    return {
+      links: [
+        { text: 'Home', route: '/', icon: 'home-outline' },
+        { text: 'Work', route: '/work-experience', icon: 'briefcase' },
+        { text: 'Education', route: '/education', icon: 'school' },
+        { text: 'Awards & Achievements', route: '/awards', icon: 'trophy-award' },
+        { text: 'Skills & Projects', route: '/skills', icon: 'projector-screen' }
+      ]
+    }
   }
 }
 </script>

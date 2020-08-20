@@ -6,6 +6,7 @@
           <v-layout row wrap justify-space-between>
             <v-flex xs12 md12>
               <h1 class='display-4 mb-5'>Skills & Projects</h1>
+              <a href="#map">Mapbox Example</a>
             </v-flex>
             <v-flex xs12 md6>
               <h2>Hard Skills</h2>
@@ -49,12 +50,19 @@
           </v-layout>
         </v-container>
       </v-parallax>
+      <Skills/>
   </v-card>
   </div>
 </template>
 
 <script>
+import Skills from '@/components/Skills.vue'
+
 export default {
+  name: 'skills',
+  components: {
+    Skills
+  },
   data: () => ({
     background: {
       src: require('@/assets/website_backgroung_test.jpg_1.jpg')
