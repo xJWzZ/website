@@ -1,7 +1,7 @@
 # website
 
 # link to website that features this code
-http://jack_wall.netsoc.co/
+http://jack_wall.netsoc.co/ <- This website has been removed since leaving college. I'm leaving the code in the case that I return to this project
 
 ## Project setup
 ```
